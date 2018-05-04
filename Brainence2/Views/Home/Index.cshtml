@@ -1,0 +1,14 @@
+﻿
+<h2>Index</h2>
+@using (Html.BeginForm("LoadFile", "Home", FormMethod.Post, new { enctype = "multipart/form-data" })
+){
+    <p>Seeking word:</p>
+    <input type="text" name="seekingWord" />
+    <p>choose a file to parse</p>
+    <input type="file" name="postedFile" id="file" value="" />
+    <input type="hidden" name="postedFile.exists" value="true" />
+    <input type="submit" value="Download file" accept="text" />
+}
+@Html.Action("ShowSavedSentences")
+
+

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Brainence2.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,6 +14,8 @@ namespace Brainence2
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            Brainence2.Utilits.MyDIContainer.BindDependency( typeof(Repositories.IRepository<Entity>),
+                new Repositories.SentencesRepository());
         }
     }
 }

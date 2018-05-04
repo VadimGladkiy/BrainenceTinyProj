@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Brainence2.Models.Entity>
+@{
+    String wrong = "";
+}
+<div class="Errors">
+    
+</div>
+<div>
+    <table style="width:100%">
+        <tr>
+            <th>Word</th>
+            <th>Sentence</th>
+            <th>Count</th>
+        </tr>
+        @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.Word</th>
+            <th>@item.Sentence</th>
+            <th>@item.Counter</th>
+        </tr>
+}
+    </table>
+</div>
+<style>
+    .Errors {
+        font-family:Britannic;
+        font-size: 16px;
+        color:red;
+    }
+</style>
